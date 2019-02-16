@@ -10,6 +10,7 @@ Uses:
 - Prettier
 - Husky / Lint-staged
 - Babel
+- Autoprefixer
 
 ## Usage
 
