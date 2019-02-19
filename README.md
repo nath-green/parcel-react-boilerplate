@@ -11,6 +11,10 @@ Uses:
 - Husky / Lint-staged
 - Babel
 - Autoprefixer
+- Jeet
+- Include Media
+
+This boilerplate includes helper classes, variables and mixins for grid, colors, spacing, media queries and typography.
 
 ## Usage
 
