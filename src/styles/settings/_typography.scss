@@ -1,0 +1,119 @@
+h1, h2, h3, h4 {
+  margin-bottom: $u-spacing-quarter;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: $u-spacing-quarter;
+}
+
+$sizes: (
+  heading-alpha: (
+    small: (
+      font-size: 36px,
+      line-height: 1.16
+    ),
+    large: (
+      font-size: 50px,
+      line-height: 1.12
+    )
+  ),
+  heading-bravo: (
+    small: (
+      font-size: 29px,
+      line-height: 1.2
+    ),
+    large: (
+      font-size: 40px,
+      line-height: 1.15
+    )
+  ),
+  heading-charlie: (
+    small: (
+      font-size: 25px,
+      line-height: 1.24
+    ),
+    large: (
+      font-size: 34px,
+      line-height: 1.18
+    )
+  ),
+  heading-delta: (
+    small: (
+      font-size: 20px,
+      line-height: 1.3
+    ),
+    large: (
+      font-size: 28px,
+      line-height: 1.21
+    )
+  ),
+  text-lead: (
+    small: (
+      font-size: 18px,
+      line-height: 1.44
+    ),
+    large: (
+      font-size: 22px,
+      line-height: 1.36
+    )
+  ),
+  text-body: (
+    small: (
+      font-size: 16px,
+      line-height: 1.5
+    ),
+    large: (
+      font-size: 18px,
+      line-height: 1.44
+    )
+  ),
+  text-small: (
+    small: (
+      font-size: 12px,
+      line-height: 1.5
+    ),
+    large: (
+      font-size: 12px,
+      line-height: 1.5
+    )
+  ),
+  text-sub: (
+    small: (
+      font-size: 60%,
+    ),
+    large: (
+      font-size: 60%
+    )
+  )
+) !default;
+
+@each $name, $size in $sizes {
+  .c-#{$name} {
+    $small: map-get($size, small);
+    $large: map-get($size, large);
+    @if map-has-key($small, font-size) {
+      font-size: map-get($small, font-size);
+    }
+    @if map-has-key($small, font-size) {
+      line-height: map-get($small, line-height);
+    }
+    
+    @include media(">large") {
+      @if map-has-key($large, font-size) {
+        font-size: map-get($large, font-size);
+      }
+      @if map-has-key($large, font-size) {
+        line-height: map-get($large, line-height);
+      }
+    }
+  }
+}
+
+.u-text-bold {
+  font-weight: bold!important;
+}
+
+.u-text-clear {
+  opacity: 0.3;
+}

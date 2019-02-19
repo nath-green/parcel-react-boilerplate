@@ -9,10 +9,13 @@ export default class App extends React.Component {
     const { name } = this.state;
 
     return (
-      <React.Fragment>
-        <h1>Hello World</h1>
-        <h1>{name}</h1>
-      </React.Fragment>
+      <div className="o-container">
+        <p className="c-heading-alpha u-text-primary u-margin-bottom--x2">{name}</p>
+        <p className="c-heading-alpha">Heading Alpha</p>
+        <p className="c-heading-bravo">Heading Bravo</p>
+        <p className="c-heading-charlie">Heading Charlie</p>
+        <p className="c-heading-delta">Heading Delta</p>
+      </div>
     );
   }
 }

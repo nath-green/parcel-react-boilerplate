@@ -1,0 +1,23 @@
+$colors: (
+  primary: #5E86CB,
+  secondary: #5E86CB,
+  pavement: #d5d5d7,
+  cloud: #F9F9F9,
+  ash: #B3B3B5,
+  charcoal: #222630,
+  success: #27ce5d,
+  error: #FF3D3D,
+  coral: #FF6B6B
+);
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+}
+
+@each $name, $color in $colors {
+  .u-text-#{$name} {
+    color: color($name)!important;
+  }
+}

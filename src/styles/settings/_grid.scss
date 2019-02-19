@@ -1,0 +1,20 @@
+@include media(">small") {
+  @include grid("sm");
+}
+
+@include media(">medium", "<=large") {
+  @include grid("med");
+}
+
+@include media(">large") {
+  @include grid("lg");
+}
+
+.o-container {
+  @include span(1);
+  padding: 0 $u-spacing;
+}
+
+.o-row {
+  @include span(1);
+}

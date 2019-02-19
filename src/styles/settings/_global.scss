@@ -1,0 +1,18 @@
+$body-settings: (
+  background-color: cloud,
+  color: charcoal,
+  font-family: 'Open Sans',
+  font-size: 16px
+);
+
+body {
+  @include span(1);
+  background-color: color(map-get($body-settings, background-color));
+  color: color(map-get($body-settings, color));
+  font-family: map-get($body-settings, font-family), sans-serif;
+  font-size: map-get($body-settings, font-size);
+  
+  &.is-loaded {
+    padding-bottom: 60px; // allow for NavStrip fixed position
+  }
+}

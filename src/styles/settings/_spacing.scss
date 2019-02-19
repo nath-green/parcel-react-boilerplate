@@ -1,0 +1,44 @@
+$u-spacing: 20px;
+$u-spacing-quarter: ($u-spacing * 0.25); // 5px
+$u-spacing-half: ($u-spacing * 0.5); // 10px
+$u-spacing-double: ($u-spacing * 2); // 40px
+$u-spacing-triple: ($u-spacing * 3); // 60px
+$u-spacing-quad: ($u-spacing * 4); // 80px
+
+$types: (padding, margin);
+$directions: (top, right, bottom, left);
+
+// mapping name to value
+$sizing: (
+  'none': 0,
+  'quarter': 0.25,
+  'half': 0.5,
+  'x2': 2,
+  'x3': 3,
+  'x4': 4
+);
+
+// loop for type
+@each $type in $types {
+  .u-#{$type} {
+    #{$type}: #{1*$u-spacing}!important;
+  }
+  
+  .u-#{$type}-none {
+    #{$type}: 0px!important;
+  }
+  
+  // loop for direction
+  @each $direction in $directions {
+    .u-#{$type}-#{$direction} {
+      #{$type}-#{$direction}: #{$u-spacing}!important;
+    }
+
+    // loop for size
+    @each $name, $size in $sizing {
+      .u-#{$type}-#{$direction}--#{$name} {
+        #{$type}-#{$direction}: #{$size*$u-spacing}!important;
+      }
+    }
+  }
+}

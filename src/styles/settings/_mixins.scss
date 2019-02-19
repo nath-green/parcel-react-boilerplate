@@ -1,0 +1,29 @@
+@mixin grid($size) {
+  $columns: (2, 3, 4, 5, 6, 7, 12);
+
+  @each $i in $columns {
+    @if 12 % $i == 0 {
+      $ratio: (12 / $i);
+      .#{$size}-#{$i} {
+        @include column(1 / $ratio, $cycle: $ratio);
+      }
+    }
+
+    @if $i == 5 {
+      .#{$size}-#{$i} {
+        @include column($i / 12);
+      }
+    }
+
+    @if $i == 7 {
+      .#{$size}-#{$i} {
+        @include column($i / 12);
+      }
+    }
+  }
+
+  .#{$size}-last {
+    margin-right: 0%;
+    float: right;
+  }
+}

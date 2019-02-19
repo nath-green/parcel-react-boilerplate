@@ -1,7 +1,2 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: lightskyblue;
-}
+@import "~css-reset-and-normalize/scss/reset-and-normalize";
+@import "./settings/settings";
